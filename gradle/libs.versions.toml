@@ -1,0 +1,132 @@
+[versions]
+agp = "8.0.1"
+itextpdf = "5.5.13.1"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.9.0"
+roomVer = "2.5.1"
+composeAccompanistVer = "0.30.1"
+
+[libraries]
+#region compose
+composeBom = "androidx.compose:compose-bom:2023.05.01"
+composeActivity = { module = 'androidx.activity:activity-compose', version = "1.7.1" }
+
+composeFoundation = { module =  'androidx.compose.foundation:foundation', version = "1.4.3" }
+composeUi = { module = 'androidx.compose.ui:ui', version = "1.4.3" }
+composeUiGraphics = { module = 'androidx.compose.ui:ui-graphics', version = "1.4.3" }
+
+composeSystemUiController = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "composeAccompanistVer" }
+composePermissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "composeAccompanistVer" }
+
+composeUiTooling = { module = 'androidx.compose.ui:ui-tooling-preview' }
+composeMaterial = { module = 'androidx.compose.material3:material3', version = "1.1.0" }
+composeConstraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+composeLifecycle = { module = "androidx.lifecycle:lifecycle-runtime-compose", version = "2.6.1" }
+composeViewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose" }
+composeNavigation = "androidx.navigation:navigation-compose:2.5.3"
+#endregion compose
+
+#region ktx
+itextpdf = { module = "com.itextpdf:itextpdf", version.ref = "itextpdf" }
+ktxCore = { module ='androidx.core:core-ktx', version = "1.10.1" }
+ktxLifecycle = { module ='androidx.lifecycle:lifecycle-runtime-ktx', version = "2.6.1" }
+
+#region ktx
+
+#region test
+junit = 'junit:junit:4.13.2'
+#endregion test
+
+#region androidtest
+junitExt =  'androidx.test.ext:junit:1.1.5'
+espresso = 'androidx.test.espresso:espresso-core:3.5.1'
+junitCompose =  { module = 'androidx.compose.ui:ui-test-junit4' }
+#endregion androidtest
+
+#region debug
+composeDebugTooling = { module = 'androidx.compose.ui:ui-tooling' }
+composeTestManifest = { module = 'androidx.compose.ui:ui-test-manifest' }
+#endregiondebug
+
+#region di
+dagger2 = "com.google.dagger:dagger:2.46.1"
+dagger2Compiler = "com.google.dagger:dagger-compiler:2.46.1"
+#endregion di
+
+
+
+#region firebase
+firebaseBom = "com.google.firebase:firebase-bom:32.0.0"
+firebaseAnalytics = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebaseAuth = { module = 'com.google.firebase:firebase-auth-ktx' }
+firebaseFirestore = { module = 'com.google.firebase:firebase-firestore-ktx' }
+
+#endregion firebase
+
+#region local
+roomRuntime = { module = "androidx.room:room-runtime", version.ref = "roomVer" }
+roomKtx = { module = "androidx.room:room-ktx", version.ref = "roomVer" }
+roomCompiler = { module = "androidx.room:room-compiler", version.ref = "roomVer" }
+#endregion local
+
+#region network
+retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+okHttp = "com.squareup.okhttp3:okhttp:4.11.0"
+okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.11.0"
+ktorEngine = "io.ktor:ktor-client-android:2.3.0"
+openAI = "com.aallam.openai:openai-client:3.2.3"
+
+junit-junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+#endregion network
+
+#region pagiation
+paginationRuntime = "androidx.paging:paging-runtime:3.1.1"
+paginationRuntimeKtx = "androidx.paging:paging-runtime-ktx:3.1.1"
+paginationCompose = "androidx.paging:paging-compose:1.0.0-alpha19"
+#endregion pagiation
+
+[bundles]
+pagination = [
+    "paginationRuntime", "paginationRuntimeKtx", "paginationCompose"
+]
+
+composeBundle = [
+    "composeActivity", "composeUi", "composeUiGraphics", "composeUiTooling" , "composeMaterial",
+    "composeLifecycle", "composeFoundation", "composeConstraintLayout", "composeViewmodel",
+    "composeNavigation", "composeSystemUiController", "composePermissions"
+]
+
+networkBundle = [
+    "retrofit", "okHttp", "okHttpLoggingInterceptor", "openAI", "ktorEngine"
+]
+
+firebaseBundle = [
+    "firebaseAnalytics", "firebaseAuth", "firebaseFirestore"
+]
+
+coreBundle = [ "ktxCore", "ktxLifecycle", "openAI" ]
+
+testBundle = [ "junit" ]
+androidTestBundle = [ "junitExt", "espresso" ]
+composeDebugBundle = [ "composeDebugTooling", "composeTestManifest" ]
+
+[plugins]
+#ksp = { id = "com.google.devtools.ksp", version = "1.8.10-1.0.9" }
+googleServices = { id = 'com.google.gms.google-services', version = '4.3.15' }
+firebase = { id = "com.google.gms.google-services" }
+
+app = { id = "com.android.application", version.ref = "agp" }
+library = { id = "com.android.library", version.ref = "agp" }
+
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version = "1.8.10" }
+
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version = "1.5.31" }
+kotlinxSerialization = { id = "kotlinx-serialization", version = "1.5.0" }

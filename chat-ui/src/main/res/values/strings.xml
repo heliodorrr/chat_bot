@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ChatBot</string>
+
+    <string name="splash_welcome">Welcome to ChatBot!</string>
+    <string name="splash_onboarding">
+        "Type in your question and we'll provide the best possible answer. We cover a wide range of topics."
+    </string>
+
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_history_clean_body">Are you sure you that you want to clear chat history?</string>
+    <string name="dialog_error_body">
+        Some error has occurred
+    </string>
+
+    <string name="export_as">Export as</string>
+
+
+    <string name="export_as_pdf_dialog_header">Export as PDF</string>
+    <string name="export_as_pdf_dialog_body">Are you sure that you want export your text as PDF?</string>
+    <string name="export_as_pdf_dialog_ok">Yes, export</string>
+    <string name="export_as_pdf_dialog_cancel">Cancel</string>
+
+</resources>
