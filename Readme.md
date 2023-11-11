@@ -1,1 +1,1 @@
-
+Jetpack Compose based chat application. You can view its code right away, but in order to make this work you have to replace a key located in data/src/main/java/com/helio/chatbot/data/di/DataModule.kt
